@@ -1,0 +1,121 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title></title>
+	
+        <style>
+        	
+table{
+	margin-right: 60px;
+	background-color: gray;
+	color: white;
+	font-size: bold;
+	border-radius: 10px;
+	border: none;
+}
+tr td{
+	padding:  5px;
+	/* border: none; */
+
+	height: 30px;
+	width: 50px;
+
+}
+
+
+
+        </style>
+
+</head>
+<body>
+    <script>
+	
+    function sol(number){
+document.getElementById("display").value+=number;
+document.getElementById("input").value+=number;
+
+}
+        function operation(OP){
+            document.getElementById("input").value +=OP;
+            document.getElementById("display").value+=OP;
+        
+        }
+            function calculate(){
+            var x=eval(document.getElementById("input").value);
+            document.getElementById("display").value=x;
+        
+        
+        }
+        function sq(){
+            var value= document.getElementById("input").value;
+            document.getElementById("display").value=value*value;
+            
+        }
+        function sqrt(){
+            var value=Math.sqrt(document.getElementById("input").value) ;
+            document.getElementById("display").value=value;
+            
+        }
+        function frac(){
+            var value=document.getElementById("input").value ;
+            document.getElementById("display").value=1/value;
+            
+        }
+        function del(){
+            var value=document.getElementById("input").value ;
+            document.getElementById("input").value=value.substr(0,value.length-1);
+            document.getElementById("display").value=value.substr(0,value.length-1);
+
+        }
+        
+        </script>
+<table border="1">
+	<tr>
+		<td colspan="4"><input type="text" id="input" name="" value=""></td>
+		
+	</tr>
+	<tr>
+		<td colspan="4"><input type="text" id="display" name="" value=""></td>
+		
+	</tr>
+	<tr>
+		<td onclick="sol(7)">7</td>
+		<td onclick="sol(8)">8</td>
+		<td onclick="sol(9)">9</td>
+		<td onclick="operation('/')">/</td>
+	</tr>
+	<tr>
+		<td onclick="sol(6)">6</td>
+		<td onclick="sol(5)">5</td>
+		<td onclick="sol(4)">4</td>
+		<td onclick="operation('*')">x</td>
+	</tr>
+	<tr>
+		<td onclick="sol(3)">3</td>
+		<td onclick="sol(2)">2</td>
+		<td onclick="sol(1)">1</td>
+		<td onclick="operation('+')">+</td>
+	</tr>
+	<tr>
+		<td onclick="sol(0)">0</td>
+		<td onclick="operation('-')" >-</td>
+		<td onclick="frac('1/x')">1/x</td>
+		<td onclick="del('del')">Del</td>
+	</tr>
+	<tr>
+		<td onclick="sq('sq')">X^2</td>
+		<td onclick="sqrt('sqrt')">Root</td>
+		<td onclick="sol('.')">.</td>
+		<td onclick="calculate('=')">=</td>
+	</tr>
+</table>
+
+
+</body>
+</html>
